@@ -4,8 +4,10 @@ import "./ShowCard.scss";
 const ShowCard = ({ show }) => (
   <div className="show__card">
     <img src={show.image}></img>
-    <h2>{show.name}</h2>
-    <div>{show.rating}</div>
+    <div className="show__desc">
+      <div className="show__title">{show.name}</div>
+      <div className="show__rating">{show.rating}</div>
+    </div>
   </div>
 );
 

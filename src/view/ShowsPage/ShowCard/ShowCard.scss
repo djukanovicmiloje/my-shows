@@ -1,6 +1,33 @@
 .show__card {
   flex-basis: 30%;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+  background-color: #23395b;
+  color: #94b9af;
+  margin-bottom: 25px;
 }
 .show__card img {
   width: 100%;
+  display: block;
+}
+.show__desc {
+  display: flex;
+  justify-content: space-between;
+}
+.show__rating {
+  background-color: #28262c;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  line-height: 3em;
+  text-align: center;
+  font-weight: bolder;
+  position: relative;
+  top: -1.5em;
+  left: -1em;
+  border: 2px solid #94b9af;
+}
+.show__title {
+  padding-top: 5px;
+  font-size: 25px;
+  font-weight: bold;
 }
