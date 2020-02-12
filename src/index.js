@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import App from "./view/App/App";
+import MyShows from "./view/MyShows";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<MyShows />, document.getElementById("root"));

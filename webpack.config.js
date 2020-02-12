@@ -5,7 +5,7 @@ module.exports = {
   mode: "development",
   entry: "./src/index.js",
   output: {
-    filename: "main.[contentHash].js",
+    filename: "main.js",
     path: path.resolve(__dirname, "dist")
   },
   plugins: [
@@ -18,7 +18,15 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader", "sass-loader"]
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"]
       }
     ]
+  },
+  watchOptions: {
+    ignored: /node_modules/
   }
 };
