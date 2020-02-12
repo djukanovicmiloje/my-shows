@@ -1,8 +1,9 @@
 import React from "react";
+import ShowsPage from "./ShowsPage/ShowsPage";
 
 class MyShows extends React.Component {
   render() {
-    return <div>IDE GAS NA MAX 1312 MURIJA NINU NINA</div>;
+    return <ShowsPage />;
   }
 }
 
