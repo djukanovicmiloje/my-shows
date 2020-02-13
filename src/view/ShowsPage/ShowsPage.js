@@ -1,11 +1,12 @@
 import React from "react";
 import fetchShows from "../../services/fetchShows";
-import "./ShowsPage.scss";
 import ShowCard from "./ShowCard/ShowCard";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Loader from "../components/Loader/Loader";
 import { Link } from "react-router-dom";
+
+import "./ShowsPage.scss";
 
 class ShowsPage extends React.Component {
   constructor() {
@@ -29,7 +30,7 @@ class ShowsPage extends React.Component {
         <Header />
         <div className="shows__container">
           {this.state.shows.map((show, key) => (
-            <Link to={`/show/${show.id}`}>
+            <Link to={`/show/${show.id}`} key={key}>
               <ShowCard show={show} key={key} />
             </Link>
           ))}

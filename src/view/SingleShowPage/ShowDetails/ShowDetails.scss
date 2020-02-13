@@ -1,18 +1,23 @@
 .show__details {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .image__container {
   flex-basis: 50%;
-
   img {
     width: 100%;
   }
 }
 
 .info__container {
+  flex-basis: 50%;
   h3 {
     color: #94b9af;
     font-size: 50px;
   }
+}
+
+.summary__container {
+  color: #94b9af;
 }

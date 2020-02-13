@@ -1,6 +1,7 @@
 import React from "react";
 import "./ShowDetails.scss";
 import GenreCard from "./GenreCard/GenreCard";
+import CastDetails from "./CastDetails/CastDetails";
 
 const ShowDetails = ({ show }) => (
   <div className="show__details">
@@ -12,7 +13,12 @@ const ShowDetails = ({ show }) => (
       {show.genres.map((genre, key) => (
         <GenreCard genre={genre} key={key} />
       ))}
+      <div
+        className="summary__container"
+        dangerouslySetInnerHTML={{ __html: show.summary }}
+      ></div>
     </div>
+    <CastDetails cast={show.cast} />
   </div>
 );
 

@@ -1,5 +1,6 @@
 import API from "../shared/API";
 import Show from "../models/show";
+import Actor from "../models/actor";
 
 const fetchSingleShow = showId => {
   const requestPath = `/shows/${showId}?embed[]=seasons&embed[]=cast`;
@@ -13,7 +14,10 @@ const fetchSingleShow = showId => {
         showData.rating.average,
         showData.image.original,
         showData.summary,
-        showData.externals.imdb
+        showData.externals.imdb,
+        showData._embedded.cast.map(
+          ({ person }) => new Actor(person.name, person.image.original)
+        )
       )
   );
 };
