@@ -5,6 +5,7 @@ import ShowCard from "./ShowCard/ShowCard";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Loader from "../components/Loader/Loader";
+import { Link } from "react-router-dom";
 
 class ShowsPage extends React.Component {
   constructor() {
@@ -28,7 +29,9 @@ class ShowsPage extends React.Component {
         <Header />
         <div className="shows__container">
           {this.state.shows.map((show, key) => (
-            <ShowCard show={show} key={key} />
+            <Link to={`/show/${show.id}`}>
+              <ShowCard show={show} key={key} />
+            </Link>
           ))}
         </div>
         <Footer />
