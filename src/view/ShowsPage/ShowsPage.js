@@ -2,8 +2,9 @@ import React from "react";
 import fetchShows from "../../services/fetchShows";
 import "./ShowsPage.scss";
 import ShowCard from "./ShowCard/ShowCard";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import Loader from "../components/Loader/Loader";
 
 class ShowsPage extends React.Component {
   constructor() {
@@ -16,9 +17,10 @@ class ShowsPage extends React.Component {
   componentDidMount() {
     fetchShows().then(shows => this.setState({ shows, loading: false }));
   }
+
   render() {
     if (this.state.loading) {
-      return <div>Content is loading</div>;
+      return <Loader />;
     }
 
     return (

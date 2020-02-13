@@ -8,6 +8,9 @@ class Show {
     this.summary = summary;
     this.imdb = imdb;
   }
+  isTopRated() {
+    return this.rating > 8 ? true : false;
+  }
 }
 
 export default Show;
