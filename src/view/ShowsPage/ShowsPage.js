@@ -1,19 +1,21 @@
 import React from "react";
 import fetchShows from "../../services/fetchShows";
-import ShowCard from "./ShowCard/ShowCard";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Loader from "../components/Loader/Loader";
-import { Link } from "react-router-dom";
-
 import "./ShowsPage.scss";
 import GenreSelect from "./GenreSelect/GenreSelect";
+import Pagination from "./Pagination/Pagination";
+import ShowsContainer from "./ShowsContainer/ShowsContainer";
+
+const SHOWS_PER_PAGE = 6;
 
 class ShowsPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      loading: true
+      loading: true,
+      pageNumber: 1
     };
   }
 
@@ -25,28 +27,45 @@ class ShowsPage extends React.Component {
     this.setState({ genre });
   }
 
+  onPageClick(pageNumber) {
+    this.setState({ pageNumber });
+  }
+
+  filterShowsToDisplay() {
+    //Filters by Genre
+    const allShows = this.state.shows;
+    const chosenGenre = this.state.genre;
+
+    const showsToDisplay = chosenGenre
+      ? allShows.filter(show => show.genres.includes(chosenGenre))
+      : allShows;
+
+    //Filters by Page
+    const pageNumber = this.state.pageNumber;
+    const showsPageFiltered = showsToDisplay.slice(
+      (pageNumber - 1) * SHOWS_PER_PAGE,
+      pageNumber * SHOWS_PER_PAGE
+    );
+
+    return showsPageFiltered;
+  }
+
   render() {
     if (this.state.loading) {
       return <Loader />;
     }
 
-    const allShows = this.state.shows;
-    const chosenGenre = this.state.genre;
-    const showsToDisplay = chosenGenre
-      ? allShows.filter(show => show.genres.includes(chosenGenre))
-      : allShows;
+    const showsToDisplay = this.filterShowsToDisplay();
 
     return (
       <div>
         <Header />
         <GenreSelect onGenreClick={genre => this.onGenreClick(genre)} />
-        <div className="shows__container">
-          {showsToDisplay.map((show, key) => (
-            <Link to={`/show/${show.id}`} key={key}>
-              <ShowCard show={show} key={key} />
-            </Link>
-          ))}
-        </div>
+        <ShowsContainer shows={showsToDisplay} />
+        <Pagination
+          numberOfPages={parseInt(this.state.shows.length / SHOWS_PER_PAGE)}
+          onPageClick={pageNumber => this.onPageClick(pageNumber)}
+        />
         <Footer />
       </div>
     );

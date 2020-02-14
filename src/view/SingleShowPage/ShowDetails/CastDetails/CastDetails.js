@@ -25,8 +25,12 @@ class CastDetails extends React.Component {
         </button>
         <div className="cast__details">
           {this.state.isGrid
-            ? this.state.cast.map(actor => <ActorCardGrid actor={actor} />)
-            : this.state.cast.map(actor => <ActorCardList actor={actor} />)}
+            ? this.state.cast.map((actor, key) => (
+                <ActorCardGrid key={key} actor={actor} />
+              ))
+            : this.state.cast.map((actor, key) => (
+                <ActorCardList key={key} actor={actor} />
+              ))}
         </div>
       </React.Fragment>
     );
