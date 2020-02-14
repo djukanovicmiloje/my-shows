@@ -3,11 +3,11 @@ import fetchShows from "../../services/fetchShows";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Loader from "../components/Loader/Loader";
-import "./ShowsPage.scss";
 import GenreSelect from "./GenreSelect/GenreSelect";
 import Pagination from "./Pagination/Pagination";
-import ShowsContainer from "./ShowsContainer/ShowsContainer";
+import Shows from "./ShowsContainer/Shows";
 
+import "./ShowsPage.scss";
 const SHOWS_PER_PAGE = 6;
 
 class ShowsPage extends React.Component {
@@ -24,11 +24,17 @@ class ShowsPage extends React.Component {
   }
 
   onGenreClick(genre) {
-    this.setState({ genre });
+    this.setState({ genre, pageNumber: 1 });
   }
 
   onPageClick(pageNumber) {
     this.setState({ pageNumber });
+  }
+  //Move this to a separate file filterShowsToDisplay.js in services
+
+  onSearchBarChange(e) {
+    const searchTerm = e.target.value;
+    this.setState({ searchTerm });
   }
 
   filterShowsToDisplay() {
@@ -36,9 +42,19 @@ class ShowsPage extends React.Component {
     const allShows = this.state.shows;
     const chosenGenre = this.state.genre;
 
-    const showsToDisplay = chosenGenre
+    let showsToDisplay = chosenGenre
       ? allShows.filter(show => show.genres.includes(chosenGenre))
       : allShows;
+
+    const searchTerm = this.state.searchTerm;
+    if (searchTerm) {
+      showsToDisplay = showsToDisplay.filter(
+        show =>
+          show.name.slice(0, searchTerm.length).toUpperCase() ===
+          searchTerm.toUpperCase()
+      );
+    }
+    const numberOfShows = showsToDisplay.length;
 
     //Filters by Page
     const pageNumber = this.state.pageNumber;
@@ -47,23 +63,30 @@ class ShowsPage extends React.Component {
       pageNumber * SHOWS_PER_PAGE
     );
 
-    return showsPageFiltered;
+    return { showsPageFiltered, numberOfShows };
   }
 
   render() {
     if (this.state.loading) {
       return <Loader />;
     }
+    //ON GENERE CHANGE SET PAGE TO 1
 
-    const showsToDisplay = this.filterShowsToDisplay();
+    const help = this.filterShowsToDisplay(); //THIS NEEDS ATTENTION
+    const showsToDisplay = help.showsPageFiltered;
+    const numberOfPages = parseInt(help.numberOfShows / SHOWS_PER_PAGE);
 
     return (
       <div>
         <Header />
+        <input
+          onChange={e => this.onSearchBarChange(e)}
+          placeholder="Search Shows"
+        />
         <GenreSelect onGenreClick={genre => this.onGenreClick(genre)} />
-        <ShowsContainer shows={showsToDisplay} />
+        <Shows shows={showsToDisplay} />
         <Pagination
-          numberOfPages={parseInt(this.state.shows.length / SHOWS_PER_PAGE)}
+          numberOfPages={numberOfPages}
           onPageClick={pageNumber => this.onPageClick(pageNumber)}
         />
         <Footer />

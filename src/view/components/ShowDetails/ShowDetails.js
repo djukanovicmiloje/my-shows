@@ -1,7 +1,7 @@
 import React from "react";
 import "./ShowDetails.scss";
-import GenreCard from "./GenreCard/GenreCard";
-import CastDetails from "./CastDetails/CastDetails";
+import GenreCard from "../GenreCard/GenreCard";
+import CastDetailsContainer from "../../SingleShowPage/CastDetailsContainer/CastDetailsContainer";
 
 const ShowDetails = ({ show }) => (
   <div className="show__details">
@@ -18,7 +18,7 @@ const ShowDetails = ({ show }) => (
         dangerouslySetInnerHTML={{ __html: show.summary }}
       ></div>
     </div>
-    <CastDetails cast={show.cast} />
+    <CastDetailsContainer cast={show.cast} />
   </div>
 );
 

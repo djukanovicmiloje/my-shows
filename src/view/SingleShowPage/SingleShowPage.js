@@ -3,7 +3,7 @@ import Loader from "../components/Loader/Loader";
 import fetchSingleShow from "../../services/fetchSingleShow";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import ShowDetails from "./ShowDetails/ShowDetails";
+import ShowDetails from "../components/ShowDetails/ShowDetails";
 
 class SingleShowPage extends React.Component {
   constructor({ match }) {

@@ -2,7 +2,7 @@ import React from "react";
 import ShowCard from "../ShowCard/ShowCard";
 
 //receives 6 shows and paints them
-const ShowsContainer = ({ shows }) => (
+const Shows = ({ shows }) => (
   <div className="shows__container">
     {shows.map((show, key) => (
       <ShowCard show={show} key={key} />
@@ -10,4 +10,4 @@ const ShowsContainer = ({ shows }) => (
   </div>
 );
 
-export default ShowsContainer;
+export default Shows;
