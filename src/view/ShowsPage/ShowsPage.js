@@ -30,7 +30,6 @@ class ShowsPage extends React.Component {
   onPageClick(pageNumber) {
     this.setState({ pageNumber });
   }
-  //Move this to a separate file filterShowsToDisplay.js in services
 
   onSearchBarChange(e) {
     const searchTerm = e.target.value;
@@ -70,7 +69,6 @@ class ShowsPage extends React.Component {
     if (this.state.loading) {
       return <Loader />;
     }
-    //ON GENERE CHANGE SET PAGE TO 1
 
     const help = this.filterShowsToDisplay(); //THIS NEEDS ATTENTION
     const showsToDisplay = help.showsPageFiltered;
