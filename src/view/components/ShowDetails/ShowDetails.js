@@ -2,6 +2,7 @@ import React from "react";
 import "./ShowDetails.scss";
 import GenreCard from "../GenreCard/GenreCard";
 import CastDetailsContainer from "../../SingleShowPage/CastDetailsContainer/CastDetailsContainer";
+import ImdbButton from "../ImdbButton/ImdbButton";
 
 const ShowDetails = ({ show }) => (
   <div className="show__details">
@@ -18,6 +19,7 @@ const ShowDetails = ({ show }) => (
         dangerouslySetInnerHTML={{ __html: show.summary }}
       ></div>
     </div>
+    <ImdbButton imdbTag={show.imdb} />
     <CastDetailsContainer cast={show.cast} />
   </div>
 );

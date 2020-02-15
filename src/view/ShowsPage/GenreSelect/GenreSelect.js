@@ -1,18 +1,7 @@
 import React from "react";
+import { GENRES } from "../../../shared/constants";
 
-const GENRES = [
-  "Drama",
-  "Thriller",
-  "Science-Fiction",
-  "Horror",
-  "Romance",
-  "Crime",
-  "Action",
-  "Adventure",
-  "Mystery",
-  "Music",
-  "Fantasy"
-];
+import "./GenreSelect.scss";
 
 const GenreSelect = ({ onGenreClick }) => (
   <div className="genre__select">

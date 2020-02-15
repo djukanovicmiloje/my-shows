@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Pagination.scss";
+
 const Pagination = ({ numberOfPages, onPageClick }) => {
   const pages = new Array(numberOfPages);
   pages.fill(null);

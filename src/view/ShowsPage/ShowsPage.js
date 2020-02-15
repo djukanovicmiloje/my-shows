@@ -1,5 +1,8 @@
 import React from "react";
+
 import fetchShows from "../../services/fetchShows";
+import filterShows from "../../services/filterShows";
+
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Loader from "../components/Loader/Loader";
@@ -8,7 +11,7 @@ import Pagination from "./Pagination/Pagination";
 import Shows from "./ShowsContainer/Shows";
 
 import "./ShowsPage.scss";
-const SHOWS_PER_PAGE = 6;
+import SearchBar from "./SearchBar/SearchBar";
 
 class ShowsPage extends React.Component {
   constructor() {
@@ -36,59 +39,32 @@ class ShowsPage extends React.Component {
     this.setState({ searchTerm });
   }
 
-  filterShowsToDisplay() {
-    //Filters by Genre
-    const allShows = this.state.shows;
-    const chosenGenre = this.state.genre;
-
-    let showsToDisplay = chosenGenre
-      ? allShows.filter(show => show.genres.includes(chosenGenre))
-      : allShows;
-
-    const searchTerm = this.state.searchTerm;
-    if (searchTerm) {
-      showsToDisplay = showsToDisplay.filter(
-        show =>
-          show.name.slice(0, searchTerm.length).toUpperCase() ===
-          searchTerm.toUpperCase()
-      );
-    }
-    const numberOfShows = showsToDisplay.length;
-
-    //Filters by Page
-    const pageNumber = this.state.pageNumber;
-    const showsPageFiltered = showsToDisplay.slice(
-      (pageNumber - 1) * SHOWS_PER_PAGE,
-      pageNumber * SHOWS_PER_PAGE
-    );
-
-    return { showsPageFiltered, numberOfShows };
-  }
-
   render() {
     if (this.state.loading) {
       return <Loader />;
     }
 
-    const help = this.filterShowsToDisplay(); //THIS NEEDS ATTENTION
-    const showsToDisplay = help.showsPageFiltered;
-    const numberOfPages = parseInt(help.numberOfShows / SHOWS_PER_PAGE);
+    const { filteredShows, numberOfPages } = filterShows(
+      this.state.shows,
+      this.state.genre,
+      this.state.searchTerm,
+      this.state.pageNumber
+    );
 
     return (
-      <div>
+      <React.Fragment>
         <Header />
-        <input
-          onChange={e => this.onSearchBarChange(e)}
-          placeholder="Search Shows"
-        />
-        <GenreSelect onGenreClick={genre => this.onGenreClick(genre)} />
-        <Shows shows={showsToDisplay} />
+        <SearchBar onChange={e => this.onSearchBarChange(e)} />
+        <div className="showbox">
+          <GenreSelect onGenreClick={genre => this.onGenreClick(genre)} />
+          <Shows shows={filteredShows} />
+        </div>
         <Pagination
           numberOfPages={numberOfPages}
           onPageClick={pageNumber => this.onPageClick(pageNumber)}
         />
         <Footer />
-      </div>
+      </React.Fragment>
     );
   }
 }
