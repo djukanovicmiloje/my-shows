@@ -1,9 +1,18 @@
+@import "../shared/constants.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font;
+}
+
 .myShows__container {
-  width: 900px;
+  width: 1050px;
   margin: 200px auto;
   border-radius: 10px;
   overflow: hidden;
 }
 body {
-  background-color: #28262c;
+  background-color: $background-color;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 
-const ImdbButton = show => (
-  <a href={`https://www.imdb.com/title/${show.imdb}}`}>IMDB page</a>
+const ImdbButton = ({ imdbTag }) => (
+  <a href={`https://www.imdb.com/title/${imdbTag}`}>IMDB page</a>
 );
 
 export default ImdbButton;

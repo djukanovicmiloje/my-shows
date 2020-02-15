@@ -1,7 +1,13 @@
 import React from "react";
 
+import "./SearchBar.scss";
+
 const SearchBar = ({ onChange }) => (
-  <input onChange={e => onChange(e)} placeholder="Search shows" />
+  <input
+    className="search__bar"
+    onChange={e => onChange(e)}
+    placeholder="Search shows"
+  />
 );
 
 export default SearchBar;

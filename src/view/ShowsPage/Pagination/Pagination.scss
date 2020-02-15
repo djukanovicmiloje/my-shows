@@ -1,0 +1,9 @@
+.pagination {
+  display: flex;
+  div {
+    flex-basis: 10%;
+  }
+  div:hover {
+    background-color: white;
+  }
+}

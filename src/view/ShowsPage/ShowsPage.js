@@ -55,8 +55,10 @@ class ShowsPage extends React.Component {
       <React.Fragment>
         <Header />
         <SearchBar onChange={e => this.onSearchBarChange(e)} />
-        <GenreSelect onGenreClick={genre => this.onGenreClick(genre)} />
-        <Shows shows={filteredShows} />
+        <div className="showbox">
+          <GenreSelect onGenreClick={genre => this.onGenreClick(genre)} />
+          <Shows shows={filteredShows} />
+        </div>
         <Pagination
           numberOfPages={numberOfPages}
           onPageClick={pageNumber => this.onPageClick(pageNumber)}

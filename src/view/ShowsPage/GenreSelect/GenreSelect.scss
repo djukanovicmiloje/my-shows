@@ -1,0 +1,15 @@
+$genre-color: #0c0f26;
+$genre-text-color: #595bc1;
+
+.genre__select {
+  background-color: $genre-color;
+  color: $genre-text-color;
+  width: 150px;
+  li {
+    height: 3em;
+    line-height: 3em;
+  }
+  li:hover {
+    color: white;
+  }
+}

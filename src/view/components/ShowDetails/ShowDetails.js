@@ -19,7 +19,7 @@ const ShowDetails = ({ show }) => (
         dangerouslySetInnerHTML={{ __html: show.summary }}
       ></div>
     </div>
-    <ImdbButton imdbTag={show} />
+    <ImdbButton imdbTag={show.imdb} />
     <CastDetailsContainer cast={show.cast} />
   </div>
 );
