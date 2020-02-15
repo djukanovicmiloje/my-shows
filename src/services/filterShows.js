@@ -21,7 +21,7 @@ const filterShows = (shows, genre, searchTerm, pageNumber) => {
     (pageNumber - 1) * SHOWS_PER_PAGE,
     pageNumber * SHOWS_PER_PAGE
   );
-  console.log(numberOfPages);
+
   return { filteredShows, numberOfPages };
 };
 
