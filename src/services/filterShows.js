@@ -1,6 +1,7 @@
 import { SHOWS_PER_PAGE } from "../shared/constants";
+import sortShows from "./sortShows";
 
-const filterShows = (shows, genre, searchTerm, pageNumber) => {
+const filterShows = (shows, genre, searchTerm, pageNumber, sortingCriteria) => {
   let filteredShows = shows;
 
   if (genre) {
@@ -15,14 +16,16 @@ const filterShows = (shows, genre, searchTerm, pageNumber) => {
     );
   }
 
-  const numberOfPages = filterShows.length;
+  let sortedShows = sortShows(filteredShows, sortingCriteria);
 
-  filteredShows = filteredShows.slice(
+  const numberOfPages = sortedShows.length;
+
+  sortedShows = sortedShows.slice(
     (pageNumber - 1) * SHOWS_PER_PAGE,
     pageNumber * SHOWS_PER_PAGE
   );
 
-  return { filteredShows, numberOfPages };
+  return { filteredShows: sortedShows, numberOfPages };
 };
 
 export default filterShows;

@@ -1,9 +1,7 @@
 @import "../../../shared/constants.scss";
 
 .show__card {
-  flex-basis: 30%;
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
-  background-color: #23395b;
+  flex-basis: 22%;
   margin-bottom: 25px;
   img {
     width: 100%;
@@ -11,29 +9,26 @@
   }
   a {
     text-decoration: none;
-    color: $text-color;
+    color: white;
   }
 }
 
-.show__desc {
-  display: flex;
-  justify-content: space-between;
-}
 .show__rating {
-  background-color: #28262c;
-  width: 3em;
-  height: 3em;
-  border-radius: 50%;
-  line-height: 3em;
-  text-align: center;
-  font-weight: bolder;
+  float: right;
   position: relative;
-  top: -1.5em;
-  left: -1em;
-  border: 2px solid #94b9af;
+  bottom: -0.75em;
+  right: 0.5em;
+  background-color: $text-color;
+  color: $header-color;
+  width: 3.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  border-radius: 0.2em;
+  font-weight: bold;
 }
 .show__title {
   padding-top: 5px;
-  font-size: 25px;
+  font-size: 15px;
   font-weight: bold;
 }

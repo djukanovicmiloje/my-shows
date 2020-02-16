@@ -12,4 +12,4 @@ export const GENRES = [
   "Music",
   "Fantasy"
 ];
-export const SHOWS_PER_PAGE = 6;
+export const SHOWS_PER_PAGE = 8;
