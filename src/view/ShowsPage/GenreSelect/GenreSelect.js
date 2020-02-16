@@ -5,6 +5,7 @@ import "./GenreSelect.scss";
 
 const GenreSelect = ({ onGenreClick }) => (
   <div className="genre__select">
+    <li onClick={() => onGenreClick("")}>All genres</li>
     {GENRES.map((genre, key) => (
       <li key={key} onClick={() => onGenreClick(genre)}>
         {genre}

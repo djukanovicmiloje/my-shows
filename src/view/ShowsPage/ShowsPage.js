@@ -12,14 +12,20 @@ import Shows from "./ShowsContainer/Shows";
 
 import "./ShowsPage.scss";
 import SearchBar from "./SearchBar/SearchBar";
+import SortDropdown from "./SortDropdown/SortDropdown";
 
 class ShowsPage extends React.Component {
   constructor() {
     super();
     this.state = {
       loading: true,
-      pageNumber: 1
+      pageNumber: 1,
+      sort: "popular"
     };
+  }
+
+  onSortOptionClick(option) {
+    this.setState({ sort: option });
   }
 
   componentDidMount() {
@@ -48,12 +54,16 @@ class ShowsPage extends React.Component {
       this.state.shows,
       this.state.genre,
       this.state.searchTerm,
-      this.state.pageNumber
+      this.state.pageNumber,
+      this.state.sort
     );
 
     return (
       <React.Fragment>
         <Header />
+        <SortDropdown
+          onOptionClick={option => this.onSortOptionClick(option)}
+        />
         <SearchBar onChange={e => this.onSearchBarChange(e)} />
         <div className="showbox">
           <GenreSelect onGenreClick={genre => this.onGenreClick(genre)} />
