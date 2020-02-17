@@ -1,9 +1,17 @@
 @import "../../../shared/constants.scss";
 
+$header-height: 50px;
+
 header {
-  height: 70px;
+  height: $header-height;
   background-color: $header-color;
-  font-size: 50px;
-  line-height: 70px;
   color: $text-color;
+  span {
+    font-size: 25px;
+    line-height: $header-height;
+    margin-left: 20px;
+    border: 3px solid $text-color;
+    padding: 0 0.3em;
+    border-radius: 0.2em;
+  }
 }

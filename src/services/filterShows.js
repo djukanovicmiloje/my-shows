@@ -18,7 +18,7 @@ const filterShows = (shows, genre, searchTerm, pageNumber, sortingCriteria) => {
 
   let sortedShows = sortShows(filteredShows, sortingCriteria);
 
-  const numberOfPages = sortedShows.length;
+  const numberOfPages = sortedShows.length / SHOWS_PER_PAGE;
 
   sortedShows = sortedShows.slice(
     (pageNumber - 1) * SHOWS_PER_PAGE,

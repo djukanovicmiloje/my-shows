@@ -1,3 +1,17 @@
+@import "../../../shared/constants.scss";
+
 .search__bar {
-  width: 100%;
+  width: 50%;
+  transition: width 0.5s;
+  background-color: #3c3b66;
+  color: $text-color;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  height: 40px;
+  border-radius: 12.5px;
+  text-align: center;
+  &:focus {
+    width: 60%;
+  }
 }

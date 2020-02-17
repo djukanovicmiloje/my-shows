@@ -1,0 +1,8 @@
+@import "../../shared/constants.scss";
+
+.search__sort__container {
+  display: flex;
+  background-color: $header-color;
+  justify-content: center;
+  flex-wrap: wrap;
+}

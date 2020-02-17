@@ -6,7 +6,7 @@ const SearchBar = ({ onChange }) => (
   <input
     className="search__bar"
     onChange={e => onChange(e)}
-    placeholder="Search shows"
+    placeholder="Search shows ..."
   />
 );
 

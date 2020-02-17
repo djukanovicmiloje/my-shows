@@ -1,9 +1,27 @@
+@import "../../../shared/constants.scss";
+
+$pagination-size: 30px;
+
 .pagination {
+  flex-basis: 100%;
   display: flex;
+  flex-wrap: wrap;
+  background-color: $header-color;
+  color: $text-color;
+  justify-content: center;
+  padding: 10px 0;
   div {
-    flex-basis: 10%;
+    width: $pagination-size;
+    height: $pagination-size;
+    line-height: $pagination-size;
+    text-align: center;
+    border: 2px solid $text-color;
+    border-radius: 50%;
+    font-weight: bold;
+    margin: 0 3px;
   }
   div:hover {
-    background-color: white;
+    background-color: $text-color;
+    color: $header-color;
   }
 }

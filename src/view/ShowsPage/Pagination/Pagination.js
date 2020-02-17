@@ -3,7 +3,11 @@ import React from "react";
 import "./Pagination.scss";
 
 const Pagination = ({ numberOfPages, onPageClick }) => {
-  const pages = new Array(numberOfPages);
+  let numberOfPagesAdjusted = parseInt(numberOfPages + 1);
+  if (numberOfPagesAdjusted > 10) {
+    numberOfPagesAdjusted = 10;
+  }
+  const pages = new Array(numberOfPagesAdjusted);
   pages.fill(null);
 
   return (

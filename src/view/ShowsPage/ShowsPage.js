@@ -9,10 +9,10 @@ import Loader from "../components/Loader/Loader";
 import GenreSelect from "./GenreSelect/GenreSelect";
 import Pagination from "./Pagination/Pagination";
 import Shows from "./ShowsContainer/Shows";
-
-import "./ShowsPage.scss";
 import SearchBar from "./SearchBar/SearchBar";
 import SortDropdown from "./SortDropdown/SortDropdown";
+
+import "./ShowsPage.scss";
 
 class ShowsPage extends React.Component {
   constructor() {
@@ -61,19 +61,21 @@ class ShowsPage extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <SortDropdown
-          onOptionClick={option => this.onSortOptionClick(option)}
-        />
-        <SearchBar onChange={e => this.onSearchBarChange(e)} />
+        <div className="search__sort__container">
+          <SortDropdown
+            onOptionClick={option => this.onSortOptionClick(option)}
+          />
+          <SearchBar onChange={e => this.onSearchBarChange(e)} />
+        </div>
         <div className="showbox">
           <GenreSelect onGenreClick={genre => this.onGenreClick(genre)} />
+
           <Shows shows={filteredShows} />
         </div>
         <Pagination
           numberOfPages={numberOfPages}
           onPageClick={pageNumber => this.onPageClick(pageNumber)}
         />
-        <Footer />
       </React.Fragment>
     );
   }

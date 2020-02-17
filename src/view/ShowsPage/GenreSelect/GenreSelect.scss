@@ -1,15 +1,18 @@
-$genre-color: #0c0f26;
+@import "../../../shared/constants.scss";
+
 $genre-text-color: #595bc1;
 
 .genre__select {
-  background-color: $genre-color;
+  background-color: $header-color;
   color: $genre-text-color;
-  width: 150px;
+  width: 200px;
   li {
     height: 3em;
     line-height: 3em;
+    padding-left: 1em;
+    font-weight: bold;
   }
   li:hover {
-    color: white;
+    color: $text-color;
   }
 }
