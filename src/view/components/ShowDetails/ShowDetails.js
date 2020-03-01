@@ -11,9 +11,11 @@ const ShowDetails = ({ show }) => (
     </div>
     <div className="info__container">
       <h3>{show.name}</h3>
-      {show.genres.map((genre, key) => (
-        <GenreCard genre={genre} key={key} />
-      ))}
+      <div className="genre_container">
+        {show.genres.map((genre, key) => (
+          <GenreCard genre={genre} key={key} />
+        ))}
+      </div>
       <div
         className="summary__container"
         dangerouslySetInnerHTML={{ __html: show.summary }}

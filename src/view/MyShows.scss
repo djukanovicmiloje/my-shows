@@ -8,11 +8,18 @@
 }
 
 .myShows__container {
-  width: 1050px;
-  margin: 50px auto;
-  border-radius: 10px;
-  overflow: hidden;
+  width: 100%;
 }
+
+@media only screen and (min-width: 1300px) {
+  .myShows__container {
+    width: 1300px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 40px auto;
+  }
+}
+
 body {
   background-image: linear-gradient(to right bottom, #7775a5, #3c3b66);
   background-size: cover;

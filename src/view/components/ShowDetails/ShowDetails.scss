@@ -15,9 +15,26 @@
   h3 {
     color: #94b9af;
     font-size: 50px;
+    padding: 20px;
+  }
+}
+.genre_container {
+  padding-bottom: 1em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 900px) {
+  .image__container {
+    flex-basis: 100%;
+  }
+  .info__container {
+    flex-basis: 100%;
   }
 }
 
 .summary__container {
   color: #94b9af;
+  line-height: 1.4em;
+  padding: 0 1em;
 }
