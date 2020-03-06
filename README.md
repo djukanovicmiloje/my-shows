@@ -1,7 +1,9 @@
 # My Shows
 
 A responsive singe page application, that displays data about TV shows from https://api.tvmaze.com .
+
 Shows can be searched, and filterd by genre, popularity.
+
 Every show's summary and cast list can be displayed.
 
 ## Technologies
