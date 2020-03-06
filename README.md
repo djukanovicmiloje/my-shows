@@ -9,8 +9,10 @@ Project was created with:
 * react
 * react-router
 
-##Setup
+## Setup
 To run this project, install it locally using npm:
+```
 $ cd ../my-shows
 $ npm install
 $ npm start
+```
