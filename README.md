@@ -1,13 +1,15 @@
 # My Shows
 
-A singe page application, that displays data about TV shows from https://api.tvmaze.com .
-Shows can be searched, and filterd by genre, popularity. Every shows summary and cast list 
-can be displayed.
+A responsive singe page application, that displays data about TV shows from https://api.tvmaze.com .
+Shows can be searched, and filterd by genre, popularity.
+Every show's summary and cast list can be displayed.
 
 ## Technologies
 Project was created with:
-* react
-* react-router
+* react 16.12
+* react-router 5.1
+Bundeled using:
+* webpack 4.41
 
 ## Setup
 To run this project, install it locally using npm:
