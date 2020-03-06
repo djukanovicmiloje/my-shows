@@ -1,40 +1,67 @@
-.show__details {
+@import "../../../shared/constants.scss";
+
+.show_details {
   display: flex;
   flex-wrap: wrap;
+  background-color: $header-color;
+  color: $text-color;
 }
 
-.image__container {
-  flex-basis: 50%;
+.image_container {
+  flex-basis: 100%;
   img {
-    width: 100%;
+    width: 95%;
+    display: block;
+    margin: auto;
   }
 }
 
-.info__container {
-  flex-basis: 50%;
+@media only screen and (min-width: 1300px) {
+  .image_container {
+    flex-basis: 50%;
+    img {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+.info_container {
+  flex-basis: 100%;
   h3 {
-    color: #94b9af;
     font-size: 50px;
     padding: 20px;
   }
 }
+
+@media only screen and (min-width: 1300px) {
+  .info_container {
+    flex-basis: 50%;
+  }
+}
+
 .genre_container {
   padding-bottom: 1em;
   display: flex;
   flex-wrap: wrap;
 }
 
-@media only screen and (max-width: 900px) {
-  .image__container {
-    flex-basis: 100%;
-  }
-  .info__container {
-    flex-basis: 100%;
-  }
-}
-
-.summary__container {
-  color: #94b9af;
+.summary_container {
   line-height: 1.4em;
   padding: 0 1em;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  a {
+    text-decoration: none;
+    color: $header-color;
+    background-color: $text-color;
+    padding: 1.2em;
+    font-weight: bold;
+    border-radius: 0.4em;
+    display: block;
+    margin: 40px;
+  }
 }

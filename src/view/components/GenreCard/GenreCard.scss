@@ -1,5 +1,8 @@
-.genre__card {
-  background-color: #94b9af;
+@import "../../../shared/constants.scss";
+
+.genre_card {
+  background-color: $text-color;
+  color: $header-color;
   border-radius: 0.5em;
   padding: 0.5em;
   margin: 0.5em;

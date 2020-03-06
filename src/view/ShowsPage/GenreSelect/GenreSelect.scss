@@ -5,8 +5,9 @@ $genre-text-color: #595bc1;
 .genre__select {
   background-color: $header-color;
   color: $genre-text-color;
-  width: 200px;
+  width: 300px;
   li {
+    list-style: none;
     height: 3em;
     line-height: 3em;
     padding-left: 1em;

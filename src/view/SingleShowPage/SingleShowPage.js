@@ -22,7 +22,7 @@ class SingleShowPage extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div className="myShows_container">
         <Header />
         {this.state.loading ? (
           <Loader />
@@ -30,7 +30,7 @@ class SingleShowPage extends React.Component {
           <ShowDetails show={this.state.show} />
         )}
         <Footer />
-      </React.Fragment>
+      </div>
     );
   }
 }

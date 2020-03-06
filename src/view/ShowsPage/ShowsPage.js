@@ -59,7 +59,7 @@ class ShowsPage extends React.Component {
     );
 
     return (
-      <React.Fragment>
+      <div className="myShows_container">
         <Header />
         <div className="search__sort__container">
           <SortDropdown
@@ -76,7 +76,7 @@ class ShowsPage extends React.Component {
           numberOfPages={numberOfPages}
           onPageClick={pageNumber => this.onPageClick(pageNumber)}
         />
-      </React.Fragment>
+      </div>
     );
   }
 }
