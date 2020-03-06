@@ -8,7 +8,8 @@ Every show's summary and cast list can be displayed.
 Project was created with:
 * react 16.12
 * react-router 5.1
-Bundeled using:
+
+Bundled using:
 * webpack 4.41
 
 ## Setup
