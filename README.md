@@ -1,4 +1,4 @@
-# My Shows
+# My Shows [DEMO](https://djukanovicmiloje.github.io/my-shows/index.html#/)
 
 A responsive singe page application, that displays data about TV shows from https://api.tvmaze.com .
 
