@@ -1,4 +1,4 @@
-@import "../shared/constants.scss";
+@import "./shared/constants.scss";
 
 * {
   margin: 0;
@@ -25,4 +25,14 @@ body {
     overflow: hidden;
     margin: 40px auto;
   }
+}
+
+.search_container {
+  display: flex;
+  background-color: $header-color;
+  justify-content: center;
+}
+.show_box {
+  display: flex;
+  flex-wrap: wrap;
 }

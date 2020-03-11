@@ -1,7 +1,7 @@
 @import "../../../shared/constants.scss";
 
 .show__card {
-  flex-basis: 22%;
+  flex-basis: 48%;
   margin-bottom: 25px;
   img {
     width: 100%;
@@ -10,6 +10,18 @@
   a {
     text-decoration: none;
     color: white;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .show__card {
+    flex-basis: 32%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .show__card {
+    flex-basis: 24%;
   }
 }
 

@@ -4,14 +4,24 @@ $header-height: 50px;
 
 header {
   height: $header-height;
-  background-color: $header-color;
-  color: $text-color;
+  background-color: $text-color;
+  color: $header-color;
   span {
     font-size: 25px;
     line-height: $header-height;
     margin-left: 20px;
-    border: 3px solid $text-color;
+    border: 3px solid $header-color;
     padding: 0 0.3em;
     border-radius: 0.2em;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  header {
+    background-color: $header-color;
+    color: $text-color;
+    span {
+      border: 3px solid $text-color;
+    }
   }
 }

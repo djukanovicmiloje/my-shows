@@ -1,5 +1,5 @@
 import React from "react";
-import CastDetails from "../../components/CastDetails/CastDetails";
+import CastDetails from "../components/CastDetails/CastDetails";
 
 class CastDetailsContainer extends React.Component {
   constructor({ cast }) {

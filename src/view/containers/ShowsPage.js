@@ -6,13 +6,10 @@ import filterShows from "../../services/filterShows";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Loader from "../components/Loader/Loader";
-import GenreSelect from "./GenreSelect/GenreSelect";
-import Pagination from "./Pagination/Pagination";
-import Shows from "./ShowsContainer/Shows";
-import SearchBar from "./SearchBar/SearchBar";
-import SortDropdown from "./SortDropdown/SortDropdown";
-
-import "./ShowsPage.scss";
+import GenreSelect from "../components/GenreSelect/GenreSelect";
+import Pagination from "../components/Pagination/Pagination";
+import Shows from "../components/Shows/Shows";
+import SearchBar from "../components/SearchBar/SearchBar";
 
 class ShowsPage extends React.Component {
   constructor() {
@@ -61,13 +58,10 @@ class ShowsPage extends React.Component {
     return (
       <div className="myShows_container">
         <Header />
-        <div className="search__sort__container">
-          <SortDropdown
-            onOptionClick={option => this.onSortOptionClick(option)}
-          />
+        <div className="search_container">
           <SearchBar onChange={e => this.onSearchBarChange(e)} />
         </div>
-        <div className="showbox">
+        <div className="show_box">
           <GenreSelect onGenreClick={genre => this.onGenreClick(genre)} />
 
           <Shows shows={filteredShows} />

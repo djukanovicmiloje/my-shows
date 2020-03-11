@@ -1,8 +1,9 @@
-.actorCard__list {
+.actorCard_list {
   flex-basis: 100%;
   display: flex;
   justify-content: space-between;
+  padding: 0 40px;
   img {
-    width: 50px;
+    width: 100px;
   }
 }

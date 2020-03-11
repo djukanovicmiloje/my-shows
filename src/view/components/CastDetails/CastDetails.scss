@@ -1,5 +1,20 @@
-.cast__details {
+@import "../../../shared/constants.scss";
+
+.cast_details {
   flex-basis: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.change_layout {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 1em;
+  border-radius: 10px;
+  background-color: $text-color;
+  color: $header-color;
+  font-weight: bold;
+  margin: 30px;
 }

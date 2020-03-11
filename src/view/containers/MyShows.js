@@ -1,10 +1,9 @@
 import React from "react";
-import ShowsPage from "./ShowsPage/ShowsPage";
 import { Switch, Route } from "react-router-dom";
 import { HashRouter } from "react-router-dom";
 
-import "./MyShows.scss";
-import SingleShowPage from "./SingleShowPage/SingleShowPage";
+import ShowsPage from "./ShowsPage";
+import SingleShowPage from "./SingleShowPage";
 
 class MyShows extends React.Component {
   render() {

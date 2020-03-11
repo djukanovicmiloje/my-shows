@@ -2,10 +2,12 @@
 
 $genre-text-color: #595bc1;
 
-.genre__select {
+.genre_select {
   background-color: $header-color;
   color: $genre-text-color;
-  width: 300px;
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
   li {
     list-style: none;
     height: 3em;
@@ -15,5 +17,12 @@ $genre-text-color: #595bc1;
   }
   li:hover {
     color: $text-color;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .genre_select {
+    flex-basis: 20%;
+    flex-direction: column;
   }
 }

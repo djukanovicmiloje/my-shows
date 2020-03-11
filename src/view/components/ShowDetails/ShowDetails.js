@@ -1,7 +1,7 @@
 import React from "react";
 import "./ShowDetails.scss";
 import GenreCard from "../GenreCard/GenreCard";
-import CastDetailsContainer from "../../SingleShowPage/CastDetailsContainer/CastDetailsContainer";
+import CastDetailsContainer from "../../containers/CastDetailsContainer";
 import ImdbButton from "../ImdbButton/ImdbButton";
 import HomeButton from "../HomeButton/HomeButton";
 

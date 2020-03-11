@@ -3,7 +3,7 @@ import React from "react";
 import "./ActorCardList.scss";
 
 const ActorCardList = ({ actor }) => (
-  <div className="actorCard__list">
+  <div className="actorCard_list">
     <div>
       <img src={actor.image} alt="" />
     </div>
